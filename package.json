@@ -1,0 +1,27 @@
+{
+  "name": "netflix-gpt",
+  "version": "1.0.0",
+  "description": "This is a Movie/series browsing app which has power of GPT.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anjaliii-g/netflix-gpt.git"
+  },
+  "keywords": [
+    "GPT",
+    "Browsing",
+    "Authentication"
+  ],
+  "author": "Anjali Gupta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anjaliii-g/netflix-gpt/issues"
+  },
+  "homepage": "https://github.com/anjaliii-g/netflix-gpt#readme",
+  "devDependencies": {
+    "parcel": "^2.15.2"
+  }
+}
