@@ -1,7 +1,8 @@
 # Netflix GPT
 
--started with parcel
--configured Tailwindcss
+- started with parcel
+- configured Tailwindcss
+- Login/signup
 
 # Features-
 - Login/sign up
