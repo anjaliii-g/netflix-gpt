@@ -2,7 +2,9 @@
 
 - started with parcel
 - configured Tailwindcss
-- Login/signup
+- Header
+- Login/sign in form
+
 
 # Features-
 - Login/sign up
