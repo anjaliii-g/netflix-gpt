@@ -8,6 +8,8 @@
 - Signup form
 - Form validation
 - UseRef hook
+- Firebase setup
+- Deploy
 
 
 # Features-
