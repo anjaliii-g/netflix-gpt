@@ -3,7 +3,11 @@
 - started with parcel
 - configured Tailwindcss
 - Header
+- Routing
 - Login/sign in form
+- Signup form
+- Form validation
+- UseRef hook
 
 
 # Features-
