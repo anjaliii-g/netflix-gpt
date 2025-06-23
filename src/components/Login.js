@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import Header from "./Header";
 import { checkValidData } from "../utils/validation";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 const Login = () => {
   const [isSignIn, setIsSignIn] = useState(true);
@@ -14,11 +15,17 @@ const Login = () => {
     console.log(email.current.value);
     console.log(password.current.value);
     const message = checkValidData(email.current.value, password.current.value);
-    console.log(message);
     
     setErrorMessage(message);
+    if(message === null){
+      //sign in/ sign up 
+      if(!isSignIn){
+
+      } else{
+        //sign in logic
+      }  
+    }else return;
     
-    //sign in/ sign up
   };
 
   const toggleSignIn = () => {
