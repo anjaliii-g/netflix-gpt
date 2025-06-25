@@ -1,8 +1,13 @@
 import React, { useRef, useState } from "react";
 import Header from "./Header";
 import { checkValidData } from "../utils/validation";
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  updateProfile,
+} from "firebase/auth";
 import { auth } from "../utils/firebase";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [isSignIn, setIsSignIn] = useState(true);
@@ -10,6 +15,7 @@ const Login = () => {
 
   const email = useRef(null);
   const password = useRef(null);
+  const navigate = useNavigate();
 
   const handleButtonClick = () => {
     //validate the form data
@@ -29,8 +35,20 @@ const Login = () => {
           .then((userCredential) => {
             // Signed up
             const user = userCredential.user;
+            updateProfile(user, {
+              displayName: name.current.value,
+              //photoURL: "https://example.com/jane-q-user/profile.jpg",
+            })
+              .then(() => {
+                navigate("/browse")
+              })
+              .catch((error) => {
+                // An error occurred
+                // ...
+              });
+
             console.log(user);
-            
+            navigate("/browse");
             // ...
           })
           .catch((error) => {
@@ -49,14 +67,13 @@ const Login = () => {
             // Signed in
             const user = userCredential.user;
             console.log(user);
-            
+            navigate("/browse");
             // ...
           })
           .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
             setErrorMessage(errorCode + "-" + errorMessage);
-            
           });
 
         //sign in logic
