@@ -27,13 +27,20 @@ const Body = () => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         //signIn/sign up
-        const { uid, email, displayName } = user; //when state chnages, we get the updated
-        dispatch(addUser({ uid: uid, email: email, displayName: displayName })); //update the appstore
-        //navigate("/browse"); //asa use is sign in/signup, we navigate it to home
+        const { uid, email, displayName, photoURL } = user; //when state chnages, we get the updated
+        dispatch(
+          addUser({
+            uid: uid,
+            email: email,
+            displayName: displayName,
+            photoURL: photoURL,
+          })
+        ); //update the appstore
+       
       } else {
         // User is signed out
         dispatch(removeUser());
-        //navigate("/"); //signout will lead to login screen
+        
       }
     });
   }, []);
