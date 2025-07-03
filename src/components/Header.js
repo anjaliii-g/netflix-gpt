@@ -7,6 +7,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { useDispatch } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
 import { auth } from "../utils/firebase";
+import { logo } from "../utils/constant";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -17,7 +18,6 @@ const Header = () => {
     signOut(auth)
       .then(() => {
         // Sign-out successful.
-        navigate("/");
       })
       .catch((error) => {
         navigate("/error");
@@ -53,7 +53,7 @@ const Header = () => {
     <div className="absolute w-screen px-16 py-8 z-10 bg-gradient-to-b from-black flex justify-between">
       <img
         className="w-44 "
-        src="https://assets.nflxext.com/en_us/layout/ecweb/common/logo-shadow2x.png"
+        src={logo}
         alt="Netflix Logo"
       />
       {user && (
