@@ -17,7 +17,9 @@
 - Bug fix1 - update profile - Photo and diaplay name
 - Bug fix2 - Browser to login page, & vice versa accor to signup/signin
 - Unsubscribed to the onAuthStateChanged callback
-- Add hardcoded values seperately in utils
+- Add hardcoded values like URLs seperately in utils
+- Register on tmdb api and get access token
+- Get data from TMDB now playing movies list API
 
 
 
